@@ -25,7 +25,9 @@ using MyFirstConsoleIbmProject;
 //student.PrintTotalMarks();
 //student.PrintAverageMarks();
 
-JaggedArray jaggedArray = new JaggedArray();
+//JaggedArray jaggedArray = new JaggedArray();
+
+EmployeeSalaryBreakdown();
 
 static void demo()
 {
@@ -87,4 +89,14 @@ static void CalculatorDemo()
             Console.WriteLine("Invalid choice.");
             break;
     } 
+}
+
+static void EmployeeSalaryBreakdown()
+{
+    EmployeeDetails employee = new EmployeeDetails();
+
+    employee.captureEmployeeDetails();
+    Console.WriteLine(employee.calculateAnnualSalary()); 
+
+
 }
