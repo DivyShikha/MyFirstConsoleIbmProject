@@ -18,12 +18,14 @@ using MyFirstConsoleIbmProject;
 //loop.ForEachExample();
 //loop.DoWHileExample();  
 
-Student student = new Student();
-Console.WriteLine($"The name of the student is : {student.studentName}");    
+//Student student = new Student();
+//Console.WriteLine($"The name of the student is : {student.studentName}");    
 
-student.CalculateAverage();
-student.PrintTotalMarks();
-student.PrintAverageMarks();
+//student.CalculateAverage();
+//student.PrintTotalMarks();
+//student.PrintAverageMarks();
+
+JaggedArray jaggedArray = new JaggedArray();
 
 static void demo()
 {
