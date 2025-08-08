@@ -19,7 +19,7 @@ namespace MyFirstConsoleIbmProject
             productPrice = price;
             productQuantity = quantity;
         }
-        //propertiesc - similar to getter and setetr methods
+        //properties - similar to getter and setetr methods
         public double ProductPrice
         {
             get { return productPrice; }

@@ -27,13 +27,16 @@ using MyFirstConsoleIbmProject;
 
 //JaggedArray jaggedArray = new JaggedArray();
 
-EmployeeSalaryBreakdown();
+//EmployeeSalaryBreakdown();
+
+ProductDetails();
+
 
 static void demo()
 {
     int number = 10;
     string greeting = "Hello, C#!";
-    Console.WriteLine($"Number : {number} and Greeting: {greeting}");
+    Console.WriteLine($"Number : {number} and Greeting: {g reeting}");
 }
 
 
@@ -99,4 +102,12 @@ static void EmployeeSalaryBreakdown()
     Console.WriteLine(employee.calculateAnnualSalary()); 
 
 
+}
+static void ProductDetails()
+{
+    Product product1 = new Product();
+    product1.ProductPrice = 100.98;
+    product1.ProductQuantity = 10;
+    Console.WriteLine("The product's price is " +  product1.ProductPrice);
+    Console.WriteLine("The product's price is " + product1.ProductQuantity);    
 }
