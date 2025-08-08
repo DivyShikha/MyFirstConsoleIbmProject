@@ -29,18 +29,17 @@ using MyFirstConsoleIbmProject;
 
 //EmployeeSalaryBreakdown();
 
-ProductDetails();
+DisplayProductDetails();
 
 
 static void demo()
 {
     int number = 10;
     string greeting = "Hello, C#!";
-    Console.WriteLine($"Number : {number} and Greeting: {g reeting}");
+    Console.WriteLine($"Number : {number} and Greeting: {greeting}");
 }
 
 
-int number1 = Convert.ToInt32(Console.Read());
 
 static void CalculatorDemo()
 {
@@ -103,11 +102,74 @@ static void EmployeeSalaryBreakdown()
 
 
 }
-static void ProductDetails()
+static void DisplayProductDetails()
 {
-    Product product1 = new Product();
-    product1.ProductPrice = 100.98;
-    product1.ProductQuantity = 10;
-    Console.WriteLine("The product's price is " +  product1.ProductPrice);
-    Console.WriteLine("The product's price is " + product1.ProductQuantity);    
+    bool exit = false;
+    List<Product> productList = new List<Product>();
+
+    Console.WriteLine("----------PRODUCT MANAGEMENT SYSTEM----------");
+
+    while (!exit)
+    {
+        Console.WriteLine("\n-----MAIN MENU-----");
+        Console.WriteLine("1. Add a new product");
+        Console.WriteLine("2. View product details");
+        Console.WriteLine("3. Exit");
+        Console.Write("Choose an option (1-3): ");
+
+        string choice = Console.ReadLine();
+
+        switch (choice)
+        {
+            case "1":
+
+                Console.Write("Enter Product name: ");
+                string prodName = Console.ReadLine();
+
+                Console.Write("Enter Product price: ");
+                double prodPrice = double.Parse(Console.ReadLine());
+
+                Console.Write("Enter Product quantity: ");
+                int prodQuantity = int.Parse(Console.ReadLine());
+
+                Product newProduct = new Product(prodName, prodPrice, prodQuantity);
+                productList.Add(newProduct);
+
+                Console.WriteLine("Product added successfully!");
+                break;
+
+            case  "2":
+                if (productList.Count == 0)
+                {
+                    Console.WriteLine("No products available.");
+                }
+                else
+                {
+                    Console.WriteLine("\n--- Product List ---");
+                    int index = 1;
+                    foreach (Product p in productList)
+                    {
+                        Console.WriteLine($"\nProduct {index++}:");
+                        Console.WriteLine($"Name: {p.ProductName}");
+                        Console.WriteLine($"Price: {p.ProductPrice:C}");
+                        Console.WriteLine($"Quantity: {p.ProductQuantity}");
+                        Console.WriteLine($"Total Value: {p.CalculateToTalPrice():C}");
+                    }
+                }
+                break;
+
+            case "3":
+                exit = true;
+                Console.WriteLine("Exiting program. Goodbye!");
+                break;
+
+            default:
+                Console.WriteLine("Invalid choice. Please try again.");
+                break;
+        }
+        
+
+    }
+
+    
 }
