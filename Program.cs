@@ -29,7 +29,11 @@ using MyFirstConsoleIbmProject;
 
 //EmployeeSalaryBreakdown();
 
-DisplayProductDetails();
+//DisplayProductDetails();
+
+//DisplayPersonDetails();
+DisplayVehicleDetails();
+//DisplayConsultingEmployeeAllDetails();
 
 
 static void demo()
@@ -173,3 +177,71 @@ static void DisplayProductDetails()
 
     
 }
+
+static void DisplayPersonDetails()
+{
+    Person person1 = new Person("A101", "Anushree", "Ranchi", 43);
+    Person person2 = new Person("A102", "Sanya", "Pune", 56);
+    Console.WriteLine(person2.ToString());
+    person2.name = "Aakash";
+    Console.WriteLine(person2.ToString());
+    Console.WriteLine(person1.ToString());
+    person1.UpdatePersonInfo("Kusum", "Assam", 32);
+    Console.WriteLine(person1.ToString());
+}
+static void DisplayConsultingEmployeeAllDetails()
+{
+    ConsultingEmployee consultingEmployee = new ConsultingEmployee();
+
+    Console.Write("Enter government ID: ");
+    consultingEmployee.ID = Console.ReadLine();
+    Console.Write("Enter name: ");
+    consultingEmployee.name = Console.ReadLine();
+    Console.Write("Enter city: ");
+    consultingEmployee.city = Console.ReadLine();
+    Console.Write("Enter age: ");
+    consultingEmployee.age = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter employee id: ");
+    consultingEmployee.EmployeeId = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter role: ");
+    consultingEmployee.Role = Console.ReadLine();
+    Console.Write("Enter email: ");
+    consultingEmployee.Email = Console.ReadLine();
+    Console.Write("Enter salary: ");
+    consultingEmployee.Salary = Convert.ToDouble(Console.ReadLine());
+    Console.Write("Enter consulting firm: ");
+    consultingEmployee.ConsultingFirm = Console.ReadLine();
+    Console.Write("Enter consulting duration: ");
+    consultingEmployee.ConsultingDuration = Convert.ToInt32(Console.ReadLine());
+
+    
+    consultingEmployee.DisplayPersonInfo();
+    consultingEmployee.DisplayEmployeeDetails();
+    consultingEmployee.DisplayConsultingEmployeeDetails();
+
+}
+static void DisplayVehicleDetails()
+{
+    
+
+    var C = new Car();
+    ElectricCar tesla = new ElectricCar(
+             battery: 75,
+             range: 400,
+             doors: 4,
+             company: "Tesla Inc.",
+             type: "Sedan",
+             make: "Tesla",
+             model: "Model 3",
+             year: 2024
+         );
+
+    // This automatically calls ToString()
+    Console.WriteLine(tesla);
+
+    
+
+    // You can also call DescribeVehicle (inherited & overridden)
+    Console.WriteLine(tesla.DescribeVehicle());
+}
+
