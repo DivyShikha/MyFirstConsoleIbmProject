@@ -32,11 +32,11 @@ using MyFirstConsoleIbmProject;
 //DisplayProductDetails();
 
 //DisplayPersonDetails();
-DisplayVehicleDetails();
+//DisplayVehicleDetails();
 //DisplayConsultingEmployeeAllDetails();
 //ArtistDemo();
 //TechnoprenureDemo();
-//GenericCollectionsAddPerson();
+GenericCollectionsAddPerson();
 
 
 
@@ -334,5 +334,8 @@ static void GenericCollectionsAddPerson()
     string idToRemove = Console.ReadLine();
     gc.RemovePersons(idToRemove);
     gc.DisplayPersons();
+    Console.WriteLine("Enter Perso ID you want to see:");
+    string idToSearch = (Console.ReadLine());
+    gc.GetPersonsWithID(idToSearch);
 }
 

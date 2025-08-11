@@ -64,5 +64,17 @@ namespace MyFirstConsoleIbmProject
                 person.DisplayPersonInfo();
             }
         }
+        public void GetPersonsWithID(string id)
+        {
+            foreach(var person in Persons)
+            {
+                if(id == person.ID)
+                {
+                    Console.WriteLine($"Person name {person.name}, age : {person.age} and city: {person.city}");
+                    return;
+                }
+            }
+            Console.WriteLine("Person with the given id not found");
+        }
     }
 }
