@@ -32,8 +32,9 @@ using MyFirstConsoleIbmProject;
 //DisplayProductDetails();
 
 //DisplayPersonDetails();
-DisplayVehicleDetails();
+//DisplayVehicleDetails();
 //DisplayConsultingEmployeeAllDetails();
+TechnoprenureDemo();
 
 
 static void demo()
@@ -243,5 +244,30 @@ static void DisplayVehicleDetails()
 
     // You can also call DescribeVehicle (inherited & overridden)
     Console.WriteLine(tesla.DescribeVehicle());
+}
+static void TechnoprenureDemo()
+{
+    TechnoPrenure technoPrenure = new TechnoPrenure();
+    Console.WriteLine("Please enter your ID:");
+    technoPrenure.ID = Console.ReadLine();
+    Console.WriteLine("Please enter your Name:");
+    technoPrenure.name = Console.ReadLine();
+    Console.WriteLine("Please enter your City:");
+    technoPrenure.city = Console.ReadLine();
+    Console.WriteLine("Please enter your Age:");
+    technoPrenure.age = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Entrepreneur ID:");
+    technoPrenure.EntroprenurId = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Business Name:");
+    technoPrenure.BusinessName = Console.ReadLine();
+    Console.WriteLine("Please enter your Business Type:");
+    technoPrenure.BusinessType = Console.ReadLine();
+    Console.WriteLine("Please enter your Investment Amount:");
+    technoPrenure.InvestmentAmount = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Please enter your Years in Business:");
+    technoPrenure.YearsInBusiness = Convert.ToInt32(Console.ReadLine());
+
+    technoPrenure.DisplayEntroprenurDetails();
+    Console.WriteLine($"Entrepreneur Info: {technoPrenure.GetEntroprenurInfo()}");
 }
 
