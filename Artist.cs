@@ -40,5 +40,15 @@ namespace MyFirstConsoleIbmProject
             StageName = stageName;
             AlbumReleased = albumReleased;
         }
+        public void DisplayArtistInfo()
+        {
+            Console.WriteLine($"Artist Id:  {ArtistId}, Stage Name: {StageName}, Genre: {Genre}, Album Released: {AlbumReleased}");
+            base.DisplayPersonInfo();
+        }
+        public override string ToString()
+        {
+            return $"Artist Id: {ArtistId}, Stage Name: {StageName}, Album Released: {AlbumReleased}" + 
+             base.ToString();
+        }
     }
 }

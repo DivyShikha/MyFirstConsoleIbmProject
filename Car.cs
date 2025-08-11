@@ -15,7 +15,7 @@ namespace MyFirstConsoleIbmProject
         public string company { get; } = company;
         public string type { get; } = type;
 
-        public string  Msg { get; set; } = "Hii, I am Vehicle class";
+        public string  Msg2 { get; set; } = "Hii, I am the Car class";
 
         public override string DescribeVehicle()
         {
@@ -23,7 +23,7 @@ namespace MyFirstConsoleIbmProject
         }
         public override string ToString()
         {
-            return $"It has {doors} doors, {type} type and belongs to {company}. The message is {Msg}";
+            return $"It has {doors} doors, {type} type and belongs to {company}. The message is {Msg2}";
         }
     }
 }

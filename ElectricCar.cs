@@ -12,7 +12,7 @@ namespace MyFirstConsoleIbmProject
         public int BatteryKWh { get; } = battery;
         public int RangeKm { get; } = range;
 
-        public string Msg { get; set; } = "Hii, I am Vehicle class";
+        public string Msg3 { get; set; } = "Hii, I am the ElectricCar class";
 
 
         public override string ToString()

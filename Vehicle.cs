@@ -16,7 +16,7 @@ namespace MyFirstConsoleIbmProject
         public string Model { get; set; } = model;
         public int Year { get; set; } = year;
 
-        public string Msg { get; set; } = "Hii, I am Vehicle class";
+        public string Msg1 { get; set; } = "Hii, I am the  Vehicle class";
 
         public abstract string DescribeVehicle();
 

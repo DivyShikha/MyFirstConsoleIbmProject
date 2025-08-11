@@ -32,9 +32,12 @@ using MyFirstConsoleIbmProject;
 //DisplayProductDetails();
 
 //DisplayPersonDetails();
-//DisplayVehicleDetails();
+DisplayVehicleDetails();
 //DisplayConsultingEmployeeAllDetails();
-TechnoprenureDemo();
+//ArtistDemo();
+//TechnoprenureDemo();
+//GenericCollectionsAddPerson();
+
 
 
 static void demo()
@@ -95,7 +98,7 @@ static void CalculatorDemo()
             validOperation = false;
             Console.WriteLine("Invalid choice.");
             break;
-    } 
+    }
 }
 
 static void EmployeeSalaryBreakdown()
@@ -103,7 +106,7 @@ static void EmployeeSalaryBreakdown()
     EmployeeDetails employee = new EmployeeDetails();
 
     employee.captureEmployeeDetails();
-    Console.WriteLine(employee.calculateAnnualSalary()); 
+    Console.WriteLine(employee.calculateAnnualSalary());
 
 
 }
@@ -143,7 +146,7 @@ static void DisplayProductDetails()
                 Console.WriteLine("Product added successfully!");
                 break;
 
-            case  "2":
+            case "2":
                 if (productList.Count == 0)
                 {
                     Console.WriteLine("No products available.");
@@ -172,11 +175,11 @@ static void DisplayProductDetails()
                 Console.WriteLine("Invalid choice. Please try again.");
                 break;
         }
-        
+
 
     }
 
-    
+
 }
 
 static void DisplayPersonDetails()
@@ -215,7 +218,7 @@ static void DisplayConsultingEmployeeAllDetails()
     Console.Write("Enter consulting duration: ");
     consultingEmployee.ConsultingDuration = Convert.ToInt32(Console.ReadLine());
 
-    
+
     consultingEmployee.DisplayPersonInfo();
     consultingEmployee.DisplayEmployeeDetails();
     consultingEmployee.DisplayConsultingEmployeeDetails();
@@ -223,27 +226,61 @@ static void DisplayConsultingEmployeeAllDetails()
 }
 static void DisplayVehicleDetails()
 {
-    
+    Console.WriteLine("Enter battery: ");
+    int battery = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter range: ");
+    int range = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter number of doors: ");
+    int doors = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter company: ");
+    string company = (Console.ReadLine());
+    Console.WriteLine("Enter type: ");
+    string type = (Console.ReadLine());
+    Console.WriteLine("Enter make: ");
+    string make = (Console.ReadLine());
+    Console.WriteLine("Enter model: ");
+    string model = (Console.ReadLine());
+    Console.WriteLine("Enter year: ");
+    int year = Convert.ToInt32(Console.ReadLine());
 
-    var C = new Car();
-    ElectricCar tesla = new ElectricCar(
-             battery: 75,
-             range: 400,
-             doors: 4,
-             company: "Tesla Inc.",
-             type: "Sedan",
-             make: "Tesla",
-             model: "Model 3",
-             year: 2024
-         );
+
+    ElectricCar tesla = new ElectricCar(battery, range, doors, company, type, make, model, year);
+    Console.WriteLine(tesla.Msg1);
+    Console.WriteLine(tesla.Msg2);
+    Console.WriteLine(tesla.Msg3);
 
     // This automatically calls ToString()
     Console.WriteLine(tesla);
 
-    
+
 
     // You can also call DescribeVehicle (inherited & overridden)
     Console.WriteLine(tesla.DescribeVehicle());
+}
+static void ArtistDemo()
+{
+    // Creating an instance of the Artist class and prompting for details
+    Artist Artist = new Artist();
+
+    Console.WriteLine("Please enter your Artist ID:");
+    Artist.ArtistId = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your ID:");
+    Artist.ID = Console.ReadLine();
+    Console.WriteLine("Please enter your Name:");
+    Artist.name = Console.ReadLine();
+    Console.WriteLine("Please enter your City:");
+    Artist.city = Console.ReadLine();
+    Console.WriteLine("Please enter your Age:");
+    Artist.age = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Please enter your Stage Name:");
+    Artist.StageName = Console.ReadLine();
+    Console.WriteLine("Please enter your Genre:");
+    Artist.Genre = Console.ReadLine();
+    Console.WriteLine("Please enter the number of Albums Released:");
+    Artist.AlbumReleased = Convert.ToInt32(Console.ReadLine());
+    Artist.DisplayArtistInfo();
+    Console.WriteLine($"Artist Info: {Artist.GetArtistInfo()}");
+    //Artist.UpdateArtistDetails("New Stage Name", "New Genre", 5);
 }
 static void TechnoprenureDemo()
 {
@@ -269,5 +306,33 @@ static void TechnoprenureDemo()
 
     technoPrenure.DisplayEntroprenurDetails();
     Console.WriteLine($"Entrepreneur Info: {technoPrenure.GetEntroprenurInfo()}");
+}
+
+
+static void GenericCollectionsAddPerson()
+{
+    GenericCollections gc = new GenericCollections();
+
+    Console.WriteLine("Enter the number of persons you want to add: ");
+    int count = Convert.ToInt32(Console.ReadLine());
+    for (int i = 0; i < count; i++)
+    {
+        Console.WriteLine($"Person {i + 1}\n");
+        Console.WriteLine("Enter name of the person: ");
+        string name = Console.ReadLine();
+        Console.WriteLine("Enter ID:");
+        string ID = Console.ReadLine(); 
+        Console.WriteLine("Enter age: ");
+        int age = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter city");
+        string city = Console.ReadLine();
+        Person newPerson = new Person(ID, name, city, age);
+        gc.Persons.Add(newPerson);
+    }
+    gc.DisplayPersons();
+    Console.WriteLine("Enter id of person to remove: ");
+    string idToRemove = Console.ReadLine();
+    gc.RemovePersons(idToRemove);
+    gc.DisplayPersons();
 }
 
